@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namma Local Rentals - Machinery & Event Tools</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="v.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <i class="fa-solid fa-truck-pickup rental-logo-icon"></i>
+            <h1>LocalRentals<span class="dot">.</span></h1>
+        </div>
+        <button id="owner-login-btn" class="owner-btn">
+            <i class="fa-solid fa-user-gear"></i> Owner Login
+        </button>
+    </header>
+
+    <main>
+        <div id="admin-status-bar" class="admin-bar" style="display: none;">
+            <span><i class="fa-solid fa-shield-halved"></i> Owner Mode Active</span>
+            <button id="owner-logout-btn">Logout</button>
+        </div>
+
+        <section class="hero-section">
+            <h2>மெஷினரி மற்றும் விசேஷ பொருட்கள் வாடகைக்கு<br><span>ஒரே இடத்தில் தேடுங்கள்!</span></h2>
+            <p>உங்களுக்கு அருகிலுள்ள கான்கிரீட் மிக்ஸர், லிஃப்ட், ஜெனரேட்டர், சவுண்ட் சிஸ்டம் மற்றும் பந்தல் சாமான்கள்.</p>
+            
+            <div class="search-box-container">
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="area-search" placeholder="பகுதி அல்லது பின்கோடு அடிக்கவும்...">
+                </div>
+                <div class="select-wrapper">
+                    <i class="fa-solid fa-boxes-stacked brief-icon"></i>
+                    <select id="service-filter">
+                        <option value="all">அனைத்து வாடகை பொருட்கள்</option>
+                        <option value="mixer">கான்கிரீட் மிக்ஸர் (Mixer Machine)</option>
+                        <option value="lift">கன்ஸ்ட்ரக்ஷன் லிஃப்ட் (Lift)</option>
+                        <option value="generator">பெரிய ஜெனரேட்டர் (Generator)</option>
+                        <option value="sound">சவுண்ட் சிஸ்டம் & மைக் செட்</option>
+                        <option value="tents">பந்தல் & சேர் சப்ளையர்ஸ்</option>
+                    </select>
+                </div>
+                <button id="search-btn">தேடுங்கள்</button>
+            </div>
+        </section>
+
+        <section class="register-trigger-section">
+            <button id="open-form-btn" class="main-register-btn">
+                <i class="fa-solid fa-square-plus"></i> ஓனர்கள் தங்கள் வாடகை பொருட்களைப் பதிவு செய்ய (Register Here)
+            </button>
+        </section>
+
+        <section class="quick-categories">
+            <h3>தேவைகள் (Categories)</h3>
+            <div class="category-chips">
+                <button class="chip active" data-filter="all">All</button>
+                <button class="chip" data-filter="mixer"><i class="fa-solid fa-shuttle-space"></i> மிக்ஸர் மெஷின்</button>
+                <button class="chip" data-filter="lift"><i class="fa-solid fa-arrow-up-from-ground-water"></i> லிஃப்ட்</button>
+                <button class="chip" data-filter="generator"><i class="fa-solid fa-charging-station"></i> ஜெனரேட்டர்</button>
+                <button class="chip" data-filter="sound"><i class="fa-solid fa-volume-high"></i> சவுண்ட் சிஸ்டம்</button>
+                <button class="chip" data-filter="tents"><i class="fa-solid fa-campground"></i> பந்தல் & சேர்ஸ்</button>
+            </div>
+        </section>
+
+        <section class="experts-section">
+            <div class="section-title-area">
+                <h3>அருகில் உள்ள வாடகை சர்வீஸ்கள்</h3>
+                <span id="results-count">0 பதிவுகள் உள்ளன</span>
+            </div>
+            <div class="experts-grid" id="experts-grid">
+                </div>
+        </section>
+    </main>
+
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-address-card"></i> புதிய வாடகை பிசினஸ் பதிவு</h3>
+                <span class="close-btn" id="close-reg-btn">&times;</span>
+            </div>
+            <form id="expert-form">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-store"></i> நிறுவனம் / ஓனர் பெயர்</label>
+                    <input type="text" id="name" placeholder="உதாரணம்: சக்தி மிக்ஸர் மெஷின்ஸ் / ஏகே சவுண்ட்ஸ் & பந்தல்" required>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-phone"></i> மொபைல் எண்</label>
+                    <input type="tel" id="phone" placeholder="98765xxxxx" required>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-list"></i> வாடகை பொருள் வகை (Category)</label>
+                    <select id="prof" required>
+                        <option value="mixer">கான்கிரீட் மிக்ஸர் மெஷின் (Mixer Machine)</option>
+                        <option value="lift">கன்ஸ்ட்ரக்ஷன் லிஃப்ட் (Construction Lift)</option>
+                        <option value="generator">பெரிய ஜெனரேட்டர் (Power Generator)</option>
+                        <option value="sound">சவுண்ட் சிஸ்டம் / மைக் செட் (Sound System)</option>
+                        <option value="tents">பந்தல், சேர் & பாத்திரங்கள் (Tent & Chairs)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-map-pin"></i> ஏரியா / லொகேஷன்</label>
+                    <input type="text" id="location" placeholder="உதாரணம்: சேலம், புதிய பஸ் ஸ்டாண்ட்" required>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-camera"></i> புகைப்படம் (Photo)</label>
+                    <input type="file" id="profile-pic" accept="image/*" class="file-input">
+                </div>
+
+                <button type="submit" class="submit-btn">விபரங்களைச் சேமிக்க</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="review-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-star"></i> விபரங்கள் & ரிவியூஸ்</h3>
+                <span class="close-btn" id="close-rev-btn">&times;</span>
+            </div>
+            
+            <div class="expert-detail-header">
+                <div id="modal-expert-avatar"></div>
+                <div>
+                    <h4 id="modal-expert-name">---</h4>
+                    <p id="modal-expert-prof">---</p>
+                    <p id="modal-expert-loc">---</p>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="add-review-section">
+                <h5>உங்கள் கருத்துக்களைக் கூறவும்:</h5>
+                <form id="review-form">
+                    <div class="rating-input-wrapper">
+                        <label>ரேட்டிங்:</label>
+                        <select id="review-rating" required>
+                            <option value="5">⭐⭐⭐⭐⭐ (5/5)</option>
+                            <option value="4">⭐⭐⭐⭐ (4/5)</option>
+                            <option value="3">⭐⭐⭐ (3/5)</option>
+                            <option value="2">⭐⭐ (2/5)</option>
+                            <option value="1">⭐ (1/5)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="review-text" rows="2" placeholder="இவர்களது சர்வீஸ் மற்றும் பொருட்கள் பற்றிய கருத்து..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn-sm">ரிவியூ சமர்ப்பிக்க</button>
+                </form>
+            </div>
+
+            <hr class="divider">
+
+            <h5>வாடிக்கையாளர் கருத்துக்கள் (<span id="modal-review-count">0</span>):</h5>
+            <div class="reviews-display-list" id="modal-reviews-list">
+                </div>
+        </div>
+    </div>
+
+    <script src="v.js"></script>
+</body>
+</html>
+
