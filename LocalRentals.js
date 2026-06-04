@@ -128,7 +128,7 @@ window.togglePremiumStatus = function(id) {
 
 ownerLoginBtn.addEventListener('click', () => {
     const password = prompt("பாஸ்வேர்ட் அடிக்கவும்:");
-    if (password === "admin123") {
+    if (password === "js1602") {
         isOwnerLoggedIn = true;
         adminStatusBar.style.display = 'flex';
         ownerLoginBtn.style.display = 'none';
