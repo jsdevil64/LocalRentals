@@ -3,128 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Namma Local Rentals - Machinery & Event Tools</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Local Workers - Premium Rentals & Equipment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="LocalRentals.css">
+    <link rel="stylesheet" href="dummy4.css">
 </head>
 <body>
 
     <header>
         <div class="logo-container">
-            <i class="fa-solid fa-truck-pickup rental-logo-icon"></i>
-            <h1>LocalRentals<span class="dot">.</span></h1>
+            <i class="fa-solid fa-truck-pickup rental-logo-icon""></i>
+            <h1>Local Rentals<span class="dot">.</span></h1>
         </div>
-        <button id="owner-login-btn" class="owner-btn">
-            <i class="fa-solid fa-user-gear"></i> Owner Login
+        <button id="tips-btn" class="tips-header-btn">
+            <i class="fa-solid fa-piggy-bank"></i> TIPS
         </button>
     </header>
 
     <main>
-        <div id="admin-status-bar" class="admin-bar" style="display: none;">
-            <span><i class="fa-solid fa-shield-halved"></i> Owner Mode Active</span>
-            <button id="owner-logout-btn">Logout</button>
-        </div>
-
+        <!-- Royal Hero Section -->
         <section class="hero-section">
-            <h2>மெஷினரி மற்றும் விசேஷ பொருட்கள் வாடகைக்கு<br><span>ஒரே இடத்தில் தேடுங்கள்!</span></h2>
-            <p>உங்களுக்கு அருகிலுள்ள கான்கிரீட் மிக்ஸர், லிஃப்ட், ஜெனரேட்டர், சவுண்ட் சிஸ்டம் மற்றும் பந்தல் சாமான்கள்.</p>
+            <h2>கட்டுமான உபகரணங்கள் & விழா கால வாடகை பொருட்கள்<br><span>Elite Rental Network!</span></h2>
+            <p>மிக்ஸர், லிஃப்ட், ஜெனரேட்டர், சவுண்ட் சிஸ்டம் மற்றும் பந்தல் சாமான்கள் ஒரே இடத்தில்.</p>
             
             <div class="search-box-container">
                 <div class="input-wrapper">
                     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" id="area-search" placeholder="பகுதி அல்லது பின்கோடு அடிக்கவும்...">
+                    <input type="text" id="area-search" placeholder="உங்கள் ஏரியா அல்லது பின்கோடு அடிக்கவும்...">
                 </div>
                 <div class="select-wrapper">
-                    <i class="fa-solid fa-boxes-stacked brief-icon"></i>
+                    <i class="fa-solid fa-wand-magic-sparkles brief-icon"></i>
                     <select id="service-filter">
-                        <option value="all">அனைத்து வாடகை பொருட்கள்</option>
-                        <option value="mixer">கான்கிரீட் மிக்ஸர் (Mixer Machine)</option>
-                        <option value="lift">கன்ஸ்ட்ரக்ஷன் லிஃப்ட் (Lift)</option>
-                        <option value="generator">பெரிய ஜெனரேட்டர் (Generator)</option>
-                        <option value="sound">சவுண்ட் சிஸ்டம் & மைக் செட்</option>
-                        <option value="tents">பந்தல் & சேர் சப்ளையர்ஸ்</option>
+                        <option value="all">அனைத்து வாடகை சேவைகளும்</option>
+                        <option value="mixer_lift">கான்கிரீட் மிக்ஸர் / லிஃப்ட்</option>
+                        <option value="generator">ஜெனரேட்டர் (Generator)</option>
+                        <option value="sound_system">சவுண்ட் சிஸ்டம் (Sound & Light)</option>
+                        <option value="pandal">பந்தல் சாமான்கள் / டெக்கரேஷன்</option>
                     </select>
                 </div>
                 <button id="search-btn">தேடுங்கள்</button>
             </div>
         </section>
 
+        <!-- Registration Trigger -->
         <section class="register-trigger-section">
             <button id="open-form-btn" class="main-register-btn">
-                <i class="fa-solid fa-square-plus"></i> ஓனர்கள் தங்கள் வாடகை பொருட்களைப் பதிவு செய்ய (Register Here)
+                <i class="fa-solid fa-screwdriver-wrench"></i> உங்கள் வாடகை பிசினஸை இலவசமாகப் பதியவும் (Register)
             </button>
         </section>
 
+        <!-- Category Chips -->
         <section class="quick-categories">
-            <h3>தேவைகள் (Categories)</h3>
+            <h3>பிரிவுகள்</h3>
             <div class="category-chips">
-                <button class="chip active" data-filter="all">All</button>
-                <button class="chip" data-filter="mixer"><i class="fa-solid fa-shuttle-space"></i> மிக்ஸர் மெஷின்</button>
-                <button class="chip" data-filter="lift"><i class="fa-solid fa-arrow-up-from-ground-water"></i> லிஃப்ட்</button>
-                <button class="chip" data-filter="generator"><i class="fa-solid fa-charging-station"></i> ஜெனரேட்டர்</button>
-                <button class="chip" data-filter="sound"><i class="fa-solid fa-volume-high"></i> சவுண்ட் சிஸ்டம்</button>
-                <button class="chip" data-filter="tents"><i class="fa-solid fa-campground"></i> பந்தல் & சேர்ஸ்</button>
+                <button class="chip active" data-filter="all">All Rentals</button>
+                <button class="chip" data-filter="mixer_lift"><i class="fa-solid fa-trowel-bricks"></i> Mixer & Lift</button>
+                <button class="chip" data-filter="generator"><i class="fa-solid fa-bolt"></i> Generator</button>
+                <button class="chip" data-filter="sound_system"><i class="fa-solid fa-volume-high"></i> Sound System</button>
+                <button class="chip" data-filter="pandal"><i class="fa-solid fa-campground"></i> Pandal Goods</button>
             </div>
         </section>
 
+        <!-- Service Listings -->
         <section class="experts-section">
             <div class="section-title-area">
-                <h3>அருகில் உள்ள வாடகை சர்வீஸ்கள்</h3>
+                <h3>சரிபார்க்கப்பட்ட நிறுவனங்கள்</h3>
                 <span id="results-count">0 பதிவுகள் உள்ளன</span>
             </div>
             <div class="experts-grid" id="experts-grid">
-                </div>
+                <!-- Data loads here -->
+            </div>
         </section>
     </main>
 
+    <!-- Registration Modal -->
     <div id="register-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3><i class="fa-solid fa-address-card"></i> புதிய வாடகை பிசினஸ் பதிவு</h3>
+                <h3><i class="fa-solid fa-store"></i> புதிய வாடகை பிசினஸ் பதிவு</h3>
                 <span class="close-btn" id="close-reg-btn">&times;</span>
             </div>
             <form id="expert-form">
                 <div class="form-group">
-                    <label><i class="fa-solid fa-store"></i> நிறுவனம் / ஓனர் பெயர்</label>
-                    <input type="text" id="name" placeholder="உதாரணம்: சக்தி மிக்ஸர் மெஷின்ஸ் / ஏகே சவுண்ட்ஸ் & பந்தல்" required>
+                    <label><i class="fa-solid fa-building"></i> நிறுவனம் / உரிமையாளர் பெயர்</label>
+                    <input type="text" id="name" placeholder="உதாரணம்: SSR எக்யூப்மென்ட்ஸ் / சிவா பந்தல்" required>
                 </div>
 
                 <div class="form-group">
-                    <label><i class="fa-solid fa-phone"></i> மொபைல் எண்</label>
+                    <label><i class="fa-solid fa-phone"></i> மொபைல் எண் (WhatsApp எண்)</label>
                     <input type="tel" id="phone" placeholder="98765xxxxx" required>
                 </div>
 
                 <div class="form-group">
-                    <label><i class="fa-solid fa-list"></i> வாடகை பொருள் வகை (Category)</label>
+                    <label><i class="fa-solid fa-boxes-stacked"></i> வாடகை பொருள் வகை</label>
                     <select id="prof" required>
-                        <option value="mixer">கான்கிரீட் மிக்ஸர் மெஷின் (Mixer Machine)</option>
-                        <option value="lift">கன்ஸ்ட்ரக்ஷன் லிஃப்ட் (Construction Lift)</option>
-                        <option value="generator">பெரிய ஜெனரேட்டர் (Power Generator)</option>
-                        <option value="sound">சவுண்ட் சிஸ்டம் / மைக் செட் (Sound System)</option>
-                        <option value="tents">பந்தல், சேர் & பாத்திரங்கள் (Tent & Chairs)</option>
+                        <option value="mixer_lift">கான்கிரீட் மிக்ஸர் / லிஃப்ட்</option>
+                        <option value="generator">ஜெனரேட்டர் (Generator)</option>
+                        <option value="sound_system">சவுண்ட் சிஸ்டம் (Sound & Light)</option>
+                        <option value="pandal">பந்தல் சாமான்கள் / டெக்கரேஷன்</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label><i class="fa-solid fa-map-pin"></i> ஏரியா / லொகேஷன்</label>
-                    <input type="text" id="location" placeholder="உதாரணம்: சேலம், புதிய பஸ் ஸ்டாண்ட்" required>
+                    <label><i class="fa-solid fa-map-location-dot"></i> ஏரியா / லொகேஷன்</label>
+                    <input type="text" id="location" placeholder="உதாரணம்: மதுரை, அண்ணா நகர்" required>
                 </div>
 
-                <div class="form-group">
-                    <label><i class="fa-solid fa-camera"></i> புகைப்படம் (Photo)</label>
-                    <input type="file" id="profile-pic" accept="image/*" class="file-input">
-                </div>
-
-                <button type="submit" class="submit-btn">விபரங்களைச் சேமிக்க</button>
+                <button type="submit" class="submit-btn">விபரங்களைச் சமர்ப்பிக்க</button>
             </form>
         </div>
     </div>
 
+    <!-- Details & Review Modal -->
     <div id="review-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3><i class="fa-solid fa-star"></i> விபரங்கள் & ரிவியூஸ்</h3>
+                <h3><i class="fa-solid fa-award"></i> விபரங்கள் & மதிப்பீடுகள்</h3>
                 <span class="close-btn" id="close-rev-btn">&times;</span>
             </div>
             
@@ -140,7 +134,7 @@
             <hr class="divider">
 
             <div class="add-review-section">
-                <h5>உங்கள் கருத்துக்களைக் கூறவும்:</h5>
+                <h5>உங்கள் மேலான கருத்துக்களைக் கூறவும்:</h5>
                 <form id="review-form">
                     <div class="rating-input-wrapper">
                         <label>ரேட்டிங்:</label>
@@ -153,7 +147,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea id="review-text" rows="2" placeholder="இவர்களது சர்வீஸ் மற்றும் பொருட்கள் பற்றிய கருத்து..." required></textarea>
+                        <textarea id="review-text" rows="2" placeholder="பொருட்களின் தரம் மற்றும் சேவை எப்படி இருந்தது?..." required></textarea>
                     </div>
                     <button type="submit" class="submit-btn-sm">ரிவியூ சமர்ப்பிக்க</button>
                 </form>
@@ -162,12 +156,33 @@
             <hr class="divider">
 
             <h5>வாடிக்கையாளர் கருத்துக்கள் (<span id="modal-review-count">0</span>):</h5>
-            <div class="reviews-display-list" id="modal-reviews-list">
-                </div>
+            <div class="reviews-display-list" id="modal-reviews-list"></div>
         </div>
     </div>
 
-    <script src="LocalRentals.js"></script>
+    <!-- Support Modal -->
+    <div id="tips-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-gem" style="color: #D4AF37;"></i> Local Workers-க்கு ஆதரவளிக்க</h3>
+                <span class="close-btn" id="close-tips-btn">&times;</span>
+            </div>
+             <div style="text-align: center; margin-bottom: 15px;">
+                <p style="font-size: 14px; color: #A4B3C6;">எங்கள் பிரீமியம் சேவை உங்களுக்குப் பிடித்திருந்தால், சிறு தொகையை வழங்கி எங்களை ஊக்குவிக்கலாம்!</p>
+            </div>
+            <form id="tips-form">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-indian-rupee-sign"></i> தொகையை உள்ளிடவும்</label>
+                    <input type="number" id="tips-amount" placeholder="100" min="1" required>
+                </div>
+                <button type="submit" class="submit-btn" style="background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%); color: #0F172A;">
+                    <i class="fa-solid fa-crown"></i> Pay via UPI
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="dummy4.js"></script>
 </body>
 </html>
 
